@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/395d7dabe4.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-2 title"><u>Resume Generator</u></h1>
+        
+        <div class="row">
+
+            <div class="col-md-6 mt-5">
+                <h3 class="text-muted">Personal Information</h3>
+                <div class="form-group mt-3">
+                    <label for="name"> Name</label>
+                    <input class="form-control" type="text" id="name" placeholder="Full Name">
+
+                </div>
+                <div class="form-group mt-3">
+                    <label for="contact"> Contact</label>
+                    <input class="form-control" type="number" id="contact" placeholder="Contact number">
+
+                </div>
+                <div class="form-group mt-3">
+                    <label for="adress"> Address</label>
+                    <textarea class="form-control" type="text" id="adress" placeholder="Enter Here" rows="4"></textarea>
+
+                </div>
+                <p class="text-secondary my-3 links">Important Links!</p>
+                <div class="form-group mt-3">
+                    <label for="linkedin"> Linkedin</label>
+                    <input class="form-control" type="text" id="linkedin" placeholder="Enter Here">
+
+                </div>
+                <div class="form-group mt-3">
+                    <label for="git">Github</label>
+                    <input class="form-control" type="text" id="git" placeholder="Enter Here">
+
+                </div>
+                <div class="form-group mt-3 mb-3">
+                    <label for="fb">Facebook</label>
+                    <input class="form-control" type="text" id="fb" placeholder="Enter Here">
+
+                </div>
+            </div>
+            <div class="col-md-6 mt-5">
+                <h3 class="text-muted">Professional Information</h3>
+                <div class="form-group mt-3">
+                    <label for="obj">Objective</label>
+                    <textarea id="obj" class="form-control" type="text" rows="3" placeholder="Enter Here"></textarea>
+
+                </div>
+                <div class="form-group mt-3" id="weg">
+                    <label for="">Work Experience!</label>
+                    <textarea class="form-control weField" type="text" rows="3" placeholder="Enter Here"></textarea>
+                    <div class="container text-center mt-3" id="weAddButton">
+                        <button onclick="addNewWEField()" class="btn btn-info btn-sm">Add</button>
+                    </div>
+                </div>
+                <div class="form-group mt-3" id="aqg">
+                    <label for="">Academic Qualifications</label>
+                    <textarea class="form-control eqField" type="text" rows="3" placeholder="Enter Here"></textarea>
+                    <div class="container text-center mt-3" id="aqAddButton">
+                        <button onclick="addaqField()" class="btn btn-info btn-sm">Add</button>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="image">Select Your Photo</label>
+                    <input id="image" type="file" class="form-control mt-3">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container text-center mt-3 mb-4">
+            <button onclick="generateCV()" class="btn btn-primary btn-lg">Generate CV</button>
+
+        </div>
+    </div>
+
+    <div class="container" id="cv-template">
+
+        <div class="row">
+            <div class="col-md-4 text-center py-5 background">
+                <img id="imgT" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2ETLxoNnhbC_FhYQPfpIrkcdRwSPYsa-04e2EbKI8RAmvAbg88m0xdAd2Y_xqKpiXWZY&usqp=CAU"
+                    alt="myphoto" class="img-fluid myimg">
+                <div class="container">
+                    <div class="header_name">
+                        <span id="nameT1">Rahul Dhakar</span>
+                        <span id="contactT">7415214582</span>
+                        <span id="adressT">City center Gwalior Mp</span>
+                    </div>
+                    <hr>
+
+                    <div class="cv_printed_links">
+                        <i class="fa fa-linkedin"></i><span class="px-3"><a href="#" id="linkedinT">http://www.google.com</a></span><br>
+                    <i class="fab fa-github"></i><span class="px-3"><a href="#" id="gitT">http://www.google.com</a></span><br>
+                    <i class="fab fa-facebook-square"></i> <span class="px-3" ><a href="#" id="fbT">http://www.google.com</a></span><br>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-8 py-5">
+
+                <h1 id="nameT2" class="text-center text-muted">Rahul Dhakar</h1>
+                <div class="card mt-4">
+
+                    <div class="header background ">
+                        <h3  class="mx-2">Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objT">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero vitae cumque cupiditate
+                            dignissimos maxime excepturi mollitia, corporis nobis ad architecto assumenda! Neque facilis
+                            aliquid recusandae possimus quos, quidem ratione unde.</p>
+                    </div>
+                </div>
+                <div class="card mt-4">
+
+                    <div class="header background ">
+                        <h3 class="mx-2">Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                       <ul id="weT">
+                           <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit perspiciatis quos reiciendis eum dicta quidem. Unde facilis, atque quisquam sequi dolorem temporibus. Repellat nihil tempora omnis, non ex alias aspernatur.</li>
+                           <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit p<li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit perspiciatis quos reiciendis eum dicta quidem. Unde facilis, atque quisquam sequi dolorem temporibus. Repellat nihil tempora omnis, non ex alias aspernatur.</li>erspiciatis quos reiciendis eum dicta quidem. Unde facilis, atque quisquam sequi dolorem temporibus. Repellat nihil tempora omnis, non ex alias aspernatur.</li>
+
+                       </ul>
+                    </div>
+                </div>
+                <div class="card mt-4">
+
+                    <div class="header background ">
+                        <h3 class="mx-2">Academic Qualifications</h3>
+                    </div>
+                    <div class="card-body">
+                       <ul id="eqT">
+                           <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit perspiciatis quos reiciendis eum dicta quidem. Unde facilis, atque quisquam sequi dolorem temporibus. Repellat nihil tempora omnis, non ex alias aspernatur.</li>
+                           <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit p<li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit perspiciatis quos reiciendis eum dicta quidem. Unde facilis, atque quisquam sequi dolorem temporibus. Repellat nihil tempora omnis, non ex alias aspernatur.</li>erspiciatis quos reiciendis eum dicta quidem. Unde facilis, atque quisquam sequi dolorem temporibus. Repellat nihil tempora omnis, non ex alias aspernatur.</li>
+
+                       </ul>
+                    </div>
+                </div>
+                <div class="container mt-3 text-center">
+                    <button onclick="printCV()" class="btn background">Print CV</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/395d7dabe4.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

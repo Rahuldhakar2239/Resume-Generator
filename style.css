@@ -1,0 +1,54 @@
+
+#cv-template{
+
+     display: none;
+}
+
+.myimg{
+        margin-top: -35px;
+        width:100px;
+        height: 100px;
+        border-radius: 100%;
+}
+.background{
+
+        background-color: lightblue;
+}
+.title{
+        color: blue;
+        font-family: 'Lobster', cursive;
+
+}
+
+.links{
+        color: tomato !important;
+}
+
+label{
+        color: rgb(24, 23, 23);
+       font-family: 'Lobster', cursive;
+       font-size: 18px;
+
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+#weAddButton,#aqAddButton{
+        text-align: right !important;
+        margin-right:-20px;
+}
+
+.cv_printed_links{
+        text-align: left !important;
+}
+
+.header_name{
+        margin-top:20px ;
+}
+.header_name span{
+        padding-left: 20px;
+
+}
