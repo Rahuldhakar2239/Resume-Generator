@@ -1,2 +1,2 @@
 # Resume-Generator
-Link - https://flow-resume.netlify.app/
+Build Your Resume! - https://flow-resume.netlify.app/
